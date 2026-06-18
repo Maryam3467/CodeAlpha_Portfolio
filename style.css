@@ -11,12 +11,6 @@ body {
     color: #333333;
     line-height: 1.6;
 }
-.logo {
-    color: white;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
 
 /* HEADER */
 header {
@@ -100,8 +94,8 @@ nav ul li a:hover {
 .hero-img img {
     width: 350px;
     max-width: 100%;
+    border-radius: 12px;
 }
-
 
 /* BUTTON */
 .btn {
@@ -125,6 +119,21 @@ section {
     padding: 100px 10%;
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    margin: 40px auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+#home {
+    opacity: 1;
+    transform: none;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 section h2 {
@@ -154,52 +163,38 @@ section h2::after {
     color: #777;
     font-size: 1rem;
     margin-bottom: 50px;
-}section {
-    padding: 100px 10%;
-    background: rgba(255,255,255,0.03);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    margin: 40px auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}section:hover {
-    transform: translateY(-5px);
-    transition: 0.4s ease;
-}
-#about{
-padding:100px 10% ;
-}
-.about-card {
-     background: #fff;
-    padding: 25px;
-    margin: 20px 0;
-    border-left: 5px solid #ff4f81;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: 0.3s ease;
-    background: #ffd6e0;
-}
-.about-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(255,79,129,0.2);
-}
-#education {
-    padding: 100px 10%;
 }
 
-.education-card {
-    background: #fff;
+/* ABOUT */
+.about-card {
+    background: #ffd6e0;
     padding: 25px;
     margin: 20px 0;
     border-left: 5px solid #ff4f81;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(255, 79, 129, 0.2);
+}
+
+/* EDUCATION */
+.education-card {
     background: #ffd6e0;
+    padding: 25px;
+    margin: 20px 0;
+    border-left: 5px solid #ff4f81;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
 }
 
 .education-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(255,79,129,0.2);
+    box-shadow: 0 10px 30px rgba(255, 79, 129, 0.2);
 }
 
 .education-card h3 {
@@ -218,13 +213,13 @@ padding:100px 10% ;
     color: #666;
     line-height: 1.7;
 }
+
 /* SKILLS */
 .skills-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
-   
 }
 
 .skill {
@@ -234,7 +229,7 @@ padding:100px 10% ;
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
-      border-left: 5px solid #ff4f81;
+    border-left: 5px solid #ff4f81;
 }
 
 .skill:hover {
@@ -244,7 +239,6 @@ padding:100px 10% ;
 }
 
 /* PROJECTS */
-
 .project-container {
     display: flex;
     flex-wrap: wrap;
@@ -253,14 +247,14 @@ padding:100px 10% ;
 }
 
 .project-card {
-    width: 400px;
+    width: 320px;
     background: #ffd6e0;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: 0.4s;
     cursor: pointer;
-      border-left: 5px solid #ff4f81;
+    border-left: 5px solid #ff4f81;
 }
 
 .project-card:hover {
@@ -268,27 +262,39 @@ padding:100px 10% ;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+.project-card h3 {
+    color: #ff4f81;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.project-card h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.project-card .tech {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.project-card ul {
+    padding-left: 20px;
+    color: #444;
+}
+
+.project-card ul li {
+    margin-bottom: 4px;
+}
 
 /* CONTACT */
 .contact-box {
     text-align: center;
 }
 
-.linkedin-btn {
-    display: inline-block;
-    margin: 20px;
-    padding: 12px 25px;
-    background: #ff6f91;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    
-}
-.linkedin-btn:hover{
-         background: #ea336a;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 79, 129, 0.4);
-}
+.linkedin-btn,
 .github-btn {
     display: inline-block;
     margin: 20px;
@@ -297,15 +303,14 @@ padding:100px 10% ;
     color: white;
     text-decoration: none;
     border-radius: 30px;
-    
 }
-.github-btn:hover{
-         background: #ea336a;
+
+.linkedin-btn:hover,
+.github-btn:hover {
+    background: #ea336a;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(255, 79, 129, 0.4);
 }
-
-
 
 /* FOOTER */
 footer {
@@ -345,19 +350,9 @@ footer {
     .menu-btn {
         display: block;
     }
-}
-section{
-opacity:0;
-transform:translateY(50px);
-transition:1s;
-}
-#home{
-opacity:1;
-transform:none;
-}
-section.show{
-opacity:1;
-transform:translateY(0);
-}
 
-
+    .project-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
